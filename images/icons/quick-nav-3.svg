@@ -1,0 +1,13 @@
+<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<g id="card-coin">
+<path id="Vector" d="M4.5 38.3838H27" stroke="#EBEBEB" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9.49493 30.375H22.0051C26.0101 30.375 27 31.365 27 35.325V44.5725C27 48.5325 26.0101 49.5225 22.0051 49.5225H9.49493C5.48993 49.5225 4.5 48.5325 4.5 44.5725V35.325C4.5 31.365 5.48993 30.375 9.49493 30.375Z" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Group">
+<path id="Vector_3" d="M49.5 33.751C49.5 42.4585 42.4575 49.501 33.75 49.501L36.1125 45.5635" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M4.5 20.251C4.5 11.5435 11.5425 4.50098 20.25 4.50098L17.8875 8.43848" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Vector_5" d="M41.625 24.75C47.2169 24.75 51.75 20.2169 51.75 14.625C51.75 9.03312 47.2169 4.5 41.625 4.5C36.0331 4.5 31.5 9.03312 31.5 14.625C31.5 20.2169 36.0331 24.75 41.625 24.75Z" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
