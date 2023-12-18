@@ -1138,6 +1138,7 @@ b {
 }
 .modal-buttons button {
     margin-left: 50px;
+    padding: 0;
 }
 .modal-body {
     padding: 0 50px;
@@ -1761,17 +1762,19 @@ b {
 .quick-nav-content {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin: 0 -25px;
 }
 .quick-nav-item {
+    width: calc(25% - 50px);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 30px 50px;
-    margin: 0 50px 50px 0;
+    margin: 0 25px 50px;
     color: #F4F4F4;
     border-radius: 20px;
     background: #454199;
@@ -2884,6 +2887,15 @@ b {
     width: 100%;
     min-height: 700px;
     height: 100%;
+    display: flex;
+}
+.demo-wrapper .demo-desk {
+    width: 100%;
+    align-self: stretch;
+}
+.demo-wrapper iframe {
+    width: 100%;
+    height: 100%;
 }
 .demo-modal.fullscreen .modal-content {
     height: 100%;
@@ -2961,7 +2973,11 @@ b {
 
 /* -------------------------------------------------------------------------------- */
 /* ------------------------------------- media ------------------------------------ */
-
+@media (max-width: 1500px) {
+    .quick-nav-item {
+        width: calc(50% - 50px);
+    }
+}
 @media (max-width: 1400px) {
     body {
         font-size: 20px;
@@ -3030,9 +3046,13 @@ b {
         font-size: 24px;
         line-height: 33px;
     }
+    .quick-nav-content {
+        margin: 0 -15px;
+    }
     .quick-nav-item {
         padding: 30px;
-        margin: 0 30px 30px 0;
+        margin: 0 15px 30px;
+        width: calc(50% - 30px);
     }
     .best-slots-list {
         padding-bottom: 30px;
@@ -3455,12 +3475,9 @@ b {
         padding: 100px 0 50px;
     }
     .quick-nav-content {
-        margin: 0 -15px;
         align-items: stretch;
     }
     .quick-nav-item {
-        width: calc(50% - 30px);
-        margin: 0 15px 30px;
         padding: 20px 40px;
         justify-content: center;
     }
@@ -3709,7 +3726,7 @@ b {
         padding: 50px 0 80px;
     }
     .modal-header {
-        padding: 30px;
+        padding: 30px !important;
     }
     .modal-body {
         padding: 0 30px;
@@ -3726,7 +3743,7 @@ b {
         margin-left: 20px;
     }
     .modal-footer {
-        padding: 30px;
+        padding: 30px !important;
     }
     .demo-logo {
         width: 220px;
@@ -3781,17 +3798,35 @@ b {
     }
     .demo-wrapper {
         background: transparent;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         min-height: unset;
     }
-    .demo-desc {
+    .demo-modal:not(.demo-mob-disabled) .modal-header {
+        padding: 0 !important;
+    }
+    .demo-modal:not(.demo-mob-disabled) .modal-buttons {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+    .demo-modal:not(.demo-mob-disabled) .modal__close .pa {
+        filter: brightness(10);
+    }
+    .demo-modal:not(.demo-mob-disabled) .modal-footer {
+        padding-top: 0 !important;
+    }
+    .demo-modal:not(.demo-mob-disabled) .demo-button .btn-secondary {
+        margin-top: -25px;
+    }
+    .demo-modal:not(.demo-mob-disabled) .demo-button span {
+        display: block;
+        padding-top: 30px;
+    }
+    .demo-mob-disabled .demo-desk {
         display: none;
     }
-    .demo-mob {
-        display: block;
+    .demo-mob-disabled .demo-mob {
+        display: flex;
+        align-items: center;
         padding: 0 30px 30px;
         color: #25379B;
         text-align: center;
@@ -4362,7 +4397,9 @@ b {
         line-height: 19px;
     }
     .references a {
-        margin: 0 30px 17px 0;
+        flex: 1 1 50%;
+        margin: 0 0 17px;
+        padding-right: 15px;
     }
     .footer {
         padding: 50px 0 0;
