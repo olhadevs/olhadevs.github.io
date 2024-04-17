@@ -2474,7 +2474,7 @@ ul li {
         background-image: url("/images/main-bg-mob.png");
         background-repeat: no-repeat;
         background-position: center top;
-        background-size: auto;
+        background-size: auto 259px;
     }
     .main > .container {
         padding-bottom: 64px;
