@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var mainSwiper = new Swiper(".main-slider", {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: false,
     autoHeight: true,
     effect: "fade",
     crossFade: true,
+    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var achievementSwiper = new Swiper(".achievement-slider", {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: false,
     autoHeight: true,
     effect: "fade",
     crossFade: true,
+    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

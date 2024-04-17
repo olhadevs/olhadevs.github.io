@@ -1670,10 +1670,6 @@ ul li {
     background-color: transparent;
     margin-bottom: -1px;
     margin-left: -1px;
-    cursor: pointer;
-}
-.partners-item:hover {
-    background-color: #F3F3F3;
 }
 .partners-item img {
     width: 100%;
@@ -1925,11 +1921,10 @@ ul li {
     background-color: transparent;
     margin-bottom: -1px;
     margin-left: -1px;
-    cursor: pointer;
 }
-.featured-item:hover {
+/* .featured-item:hover {
     background-color: #F3F3F3;
-}
+} */
 .featured-item img {
     width: 100%;
     height: auto;
