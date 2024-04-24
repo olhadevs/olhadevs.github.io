@@ -1407,9 +1407,16 @@ ul li {
 /* ---------------------------------------------------------- */
 /* ------------------------- header ------------------------- */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
     padding: 14px 0;
-    background: #F3F3F3;
-    border-bottom: 1px solid #CACCCE;
+    background: rgba(243, 243, 243, 0.6);
+    box-shadow: 1px 0 1px #CACCCE;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 .header .container {
     display: flex;
@@ -1465,17 +1472,28 @@ ul li {
 /* ---------------------------------------------------------- */
 /* -------------------------- main -------------------------- */
 .main {
+    position: relative;
     padding-top: 285px;
     border-bottom: 1px solid #CACCCE;
-    overflow: hidden;
     background-color: #F3F3F3;
+    overflow: hidden;
+    text-align: center;
+}
+.main-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
     background-image: url("/images/main-bg.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto;
-    text-align: center;
 }
 .main > .container {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1491,6 +1509,8 @@ ul li {
     justify-content: center; 
 }
 .main-stats {
+    position: relative;
+    z-index: 2;
     border-top: 1px solid #CACCCE;
 }
 .main-stats .container {
@@ -1595,14 +1615,25 @@ ul li {
     right: 0;
     bottom: 0;
     z-index: 0;
+    overflow: hidden;
 }
 .main-slide .slide-bg img {
     width: 100%;
-    height: 100%;
+    height: 1000px;
+    margin-top: -150px;
     object-fit: cover;
     object-position: center;
     vertical-align: middle;
+    /* animation: slideUpDown 4s infinite alternate linear; */
 }
+/* @keyframes slideUpDown {
+    from {
+      transform: translateY(-10%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  } */
 .swiper-wrapper {
     align-items: stretch;
 }
@@ -1707,9 +1738,8 @@ ul li {
     border-bottom: 1px solid #CACCCE;
     overflow: hidden;
     text-align: center;
-
 }
-.mission::before {
+/* .mission::before {
     content: '';
     position: absolute;
     left: 0;
@@ -1734,6 +1764,30 @@ ul li {
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto 100%;
+} */
+.mission-left-bg {
+    position: absolute;
+    left: 0;
+    top: -25%;
+    z-index: -1;
+    width: 100%;
+    height: 150%;
+    background-image: url("/images/about-left.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 900px;
+}
+.mission-right-bg {
+    position: absolute;
+    left: 0;
+    top: -25%;
+    z-index: -1;
+    width: 100%;
+    height: 150%;
+    background-image: url("/images/about-right.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 900px; 
 }
 .mission .container {
     display: flex;
@@ -1959,6 +2013,7 @@ ul li {
     border-right: 1px solid #CACCCE;
 }
 .services-right {
+    position: relative;
     padding: 80px 32px;
     width: 50%;
     display: flex;
@@ -1966,6 +2021,19 @@ ul li {
     align-items: center;
     justify-content: center;   
     border-right: 1px solid #CACCCE;
+    overflow: hidden;
+    /* background: url('/images/services-bg.png') no-repeat;
+    background-position: center bottom;
+    background-size: cover; */
+}
+.services-right-bg {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    max-width: unset !important;
     background: url('/images/services-bg.png') no-repeat;
     background-position: center bottom;
     background-size: cover;
@@ -2094,7 +2162,7 @@ ul li {
     color: #fff;
     border-right: 1px solid #CACCCE;
 }
-.contact-left::before {
+/* .contact-left::before {
     content: '';
     position: absolute;
     right: 0;
@@ -2102,6 +2170,17 @@ ul li {
     z-index: 0;
     width: 1000px;
     height: 100%;
+    background: url('/images/contact-bg.png') no-repeat;
+    background-position: left center;
+    background-size: cover;
+} */
+.contact-left-bg {
+    position: absolute;
+    right: 0;
+    top: -25%;
+    z-index: 0;
+    width: 1000px;
+    height: 150%;
     background: url('/images/contact-bg.png') no-repeat;
     background-position: left center;
     background-size: cover;
@@ -2299,6 +2378,14 @@ ul li {
     .mission .title-1 {
         max-width: 1015px;
     }
+    .mission-left-bg {
+        left: -50px;
+        background-size: auto 1200px;
+    }
+    .mission-right-bg {
+        left: 50px;
+        background-size: auto 1200px;
+    }
     .achievement-slide .slide-title {
         min-height: 187px;
     }
@@ -2358,6 +2445,7 @@ ul li {
         padding: 140px 0;
         border-bottom: 1px solid #CACCCE;
         border-right: 0;
+        overflow: hidden;
     }
     .contact-title {
         max-width: 474px;
@@ -2402,7 +2490,6 @@ ul li {
     .featured-item {
         width: calc(16.66% + 1px);
     }
-
 }
 
 @media (max-width: 768px) {
@@ -2456,20 +2543,33 @@ ul li {
         line-height: 20px;
     }
     .header {
-        padding: 19px 0;
+        padding: 16px 0;
     }
-    .header-nav {
+    .header-nav .header-social {
         display: none;
+    }
+    .header-nav a {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
     }
     .heading {
         padding: 64px 0;
     }
     .main {
         padding-top: 205px;
+    }
+    .main-bg {
+        position: absolute;
+        left: 0;
+        top: -160px;
+        z-index: 3;
+        width: 100%;
+        height: 400px;
         background-image: url("/images/main-bg-mob.png");
         background-repeat: no-repeat;
         background-position: center top;
-        background-size: auto 259px;
+        background-size: auto 339px;
     }
     .main > .container {
         padding-bottom: 64px;
@@ -2500,7 +2600,6 @@ ul li {
     .stats-item:last-child {
         border-bottom: 0;
     }
-
     .main-slide {
         flex-direction: column;
         align-items: center;
@@ -2536,6 +2635,10 @@ ul li {
         height: 300px;
         justify-content: flex-end;
         padding: 60px 24px 22px;
+    }
+    .main-slide .slide-bg img {
+        height: 600px;
+        margin-top: -200px;
     }
     .main-slide .slide-right .title-3 {
         padding-bottom: 72px;
@@ -2591,7 +2694,7 @@ ul li {
     .mission {
         padding: 64px 0;
     }
-    .mission::before {
+    /* .mission::before {
         background-image: url("/images/about-bg-mob.png");
         background-repeat: no-repeat;
         background-position: center;
@@ -2599,6 +2702,21 @@ ul li {
     }
     .mission::after {
         content: none;
+    } */
+    .mission-left-bg {
+        position: absolute;
+        left: 0;
+        top: -13%;
+        z-index: 1;
+        width: 100%;
+        height: 124%;
+        background-image: url("/images/about-bg-mob.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .mission-right-bg {
+        display: none;
     }
     .mission .container {
         display: flex;
@@ -2737,6 +2855,12 @@ ul li {
         padding: 4px 24px 64px;
         width: 100%;
         border-right: 0;
+        /* background-position: center bottom; */
+        /* background-size: cover; */
+    }
+    .services-right-bg {
+        bottom: -180px;
+        height: 700px;  
         background-position: center bottom;
         background-size: cover;
     }
@@ -2770,12 +2894,23 @@ ul li {
         border-right: 0;
         border-bottom: 1px solid #CACCCE;
     }
-    .contact-left::before {
+    /* .contact-left::before {
         width: 100%;
         height: 100%;
         background: url('/images/contact-bg-mob.png') no-repeat;
         background-position: center;
         background-size: auto;
+    } */
+    .contact-left-bg {
+        position: absolute;
+        right: 0;
+        top: -100px;
+        z-index: 0;
+        width: 100%;
+        height: 700px;
+        background: url('/images/contact-bg-mob.png') no-repeat;
+        background-position: center;
+        background-size: 700px auto;
     }
     .contact-title {
         max-width: 355px;

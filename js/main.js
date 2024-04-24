@@ -11,6 +11,66 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // SmoothParallax.init();
+
+  let isMob = window.innerWidth <= 768 ? true : false;
+
+  new simpleParallax(document.querySelectorAll('.parallax-mission'), {
+    delay: 0,
+    orientation: 'up',
+    scale: 1.2,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-mission-text'), {
+    delay: 0,
+    orientation: 'down',
+    scale: 1.2,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-main'), {
+    delay: 0,
+    orientation: 'up',
+    scale: isMob ? 1 : 1.4,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-main-image'), {
+    delay: 0,
+    orientation: isMob ? 'down' : 'up',
+    scale: isMob ? 1.9 : 1.4,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-slide'), {
+    delay: 0,
+    orientation: 'up',
+    scale: 1.5,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-slide-text'), {
+    delay: 0,
+    orientation: 'down',
+    scale: isMob ? 1 : 4,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-services'), {
+    delay: 0,
+    orientation: 'up',
+    scale: isMob ? 1.4 : 1.25,
+    overflow: true,
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-contact'), {
+    delay: 0,
+    orientation: 'up',
+    scale: isMob ? 1.2 : 1.4,
+    overflow: true,
+  });
+
   var mainSwiper = new Swiper(".main-slider", {
     slidesPerView: 1,
     spaceBetween: 0,
