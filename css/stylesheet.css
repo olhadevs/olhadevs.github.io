@@ -1357,7 +1357,15 @@ ul li {
     line-height: 28px;
     text-align: center;
 }
-
+.title-appearable {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s .2s ease-out;
+}
+.title-appear {
+    opacity: 1;
+    transform: translateY(0);
+}
 /* ------------------- tabs end ----------------- */
 /* icons */
 .in {

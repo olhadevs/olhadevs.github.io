@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // SmoothParallax.init();
-
   let isMob = window.innerWidth <= 768 ? true : false;
 
   new simpleParallax(document.querySelectorAll('.parallax-main'), {
@@ -78,6 +76,33 @@ document.addEventListener('DOMContentLoaded', function () {
     overflow: true,
     transition: 'cubic-bezier(0,0,0,1)'
   });
+
+  function checkForVisibility() {
+    var titles = document.querySelectorAll(".title-appearable");
+    titles.forEach(function(title) {
+      if (isElementInViewport(title)) {
+        title.classList.add("title-appear");
+      }
+    });
+  }
+  
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+  
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  if (window.addEventListener) {
+    addEventListener("DOMContentLoaded", checkForVisibility, false);
+    addEventListener("load", checkForVisibility, false);
+    addEventListener("scroll", checkForVisibility, false);
+  }
 
   var mainSwiper = new Swiper(".main-slider", {
     slidesPerView: 1,
