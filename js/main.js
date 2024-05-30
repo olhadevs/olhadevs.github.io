@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   new simpleParallax(document.querySelectorAll('.parallax-slide'), {
     delay: .6,
     orientation: 'up',
-    scale: 1.2,
+    scale: isMob ? 1.6 : 1.2,
     overflow: true,
     transition: 'cubic-bezier(0,0,0,1)'
   });
@@ -72,7 +72,15 @@ document.addEventListener('DOMContentLoaded', function () {
   new simpleParallax(document.querySelectorAll('.parallax-contact'), {
     delay: .6,
     orientation: 'up',
-    scale: isMob ? 1.2 : 1.4,
+    scale: 1.2,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+
+  new simpleParallax(document.querySelectorAll('.parallax-events-main-image'), {
+    delay: .6,
+    orientation: 'down',
+    scale: isMob ? 1.9 : 1.6,
     overflow: true,
     transition: 'cubic-bezier(0,0,0,1)'
   });
@@ -121,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clickable: true,
       renderFraction: function (currentClass, totalClass) {
         return '0<span class="' + currentClass + '">0</span>' +
-                ' / 0' +
+                '/0' +
                 '<span class="' + totalClass + '">0</span>';
       }
     },
@@ -151,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clickable: true,
       renderFraction: function (currentClass, totalClass) {
         return '0<span class="' + currentClass + '">0</span>' +
-                ' / 0' +
+                '/0' +
                 '<span class="' + totalClass + '">0</span>';
       }
     },
