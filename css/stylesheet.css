@@ -2999,10 +2999,13 @@ ul li {
     .achievement-slide .slide-right {
         width: 100%;
         border-right: 0;
+        padding: 0 24px;
     }
     .achievement-slide .slide-image {
         max-height: 450px;
         margin: 0 auto;
+        border-left: 1px solid #CACCCE;
+        border-right: 1px solid #CACCCE;
     }
     .achievement .swiper-nav {
         width: auto;
@@ -3226,7 +3229,8 @@ ul li {
         padding: 182px 0 118px;
     }
     .events-main-bg {
-        top: -64px;
+        height: 340px;
+        top: -54px;
         background-image: url("/images/events-main-bg-mob.jpg");
     }
     .events {
