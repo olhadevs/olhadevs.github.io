@@ -119,6 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
     effect: "fade",
     crossFade: true,
     loop: true,
+    autoplay: {
+      delay: 2000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: true,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -149,6 +154,11 @@ document.addEventListener('DOMContentLoaded', function () {
     effect: "fade",
     crossFade: true,
     loop: true,
+    autoplay: {
+      delay: 2000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: true,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -196,4 +206,5 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     })
   }
+
 });
